@@ -1,33 +1,25 @@
 # The following is the order of the links in the header of the website.
 #
+# This site is a single-page academic homepage: every entry below points to a
+# section anchor on the front page (`/`) instead of a separate page.
+#
 # Changing the order here will adjust the order and you can also add additional
 # links. Removing a link prevents it from showing in the header, but does not
 # prevent it from being included in the site.
 #
-# NOTE that only one of the CV options should be selected, the first is for the
-#      Markdown formatted page while the second is generated using JSON.
+# NOTE that URLs starting with "/#" are page-relative anchors. The templates in
+# _layouts/ and _includes/ prepend the site base path to relative URLs, so the
+# anchors keep working from any other page of the site.
 
 main:
+  - title: "Home"
+    url: "/#home"
+
+  - title: "Education"
+    url: "/#education"
+
   - title: "Publications"
-    url: /publications/
+    url: "/#publications"
 
-  - title: "Talks"
-    url: /talks/    
-
-  - title: "Teaching"
-    url: /teaching/    
-    
-  - title: "Portfolio"
-    url: /portfolio/
-        
-  - title: "Blog Posts"
-    url: /year-archive/
-    
-  - title: "CV"
-    url: /cv/
-    
-  # - title: "CV"
-  #   url: /cv-json/
-    
-  - title: "Guide"
-    url: /markdown/
+  - title: "Honors"
+    url: "/#honors"

@@ -1,0 +1,63 @@
+/* ==========================================================================
+   CUSTOM - single-page academic homepage
+   --------------------------------------------------------------------------
+   Imported last from /assets/css/main.scss. Everything here is something the
+   stock theme does not already provide for an anchor-based one-page layout,
+   so that nothing under _sass/layout/ or _sass/theme/ has to be edited.
+
+   Selectors are written as `.page__content .entry-title` rather than
+   `.entry-title` on purpose: the theme styles `.page__content p` with a
+   higher specificity, which would otherwise win over the entry rules below.
+   ========================================================================== */
+
+/*
+   Fixed masthead offset
+   ========================================================================== */
+
+/* `.masthead` is `position: fixed`. The theme keeps the page content clear of
+   it with a body padding, but an anchor jump would still land underneath the
+   bar. --masthead-offset is refreshed by /assets/js/section-nav.js with the
+   real height of the bar, which grows taller on narrow screens. */
+:root {
+  --masthead-offset: #{$masthead-height};
+}
+
+#main [id] {
+  scroll-margin-top: calc(var(--masthead-offset) + 1.5rem);
+}
+
+/*
+   Current section in the top navigation
+   ========================================================================== */
+
+/* The theme only marks a menu item `.selected` when `page.url` matches a
+   navigation URL, which never happens for an in-page anchor - and that class
+   also disables pointer events, so it is not reusable here. section-nav.js
+   toggles `.section-active` instead and this rule mirrors the theme's look. */
+.masthead__menu-item.section-active > a {
+  color: var(--global-text-color);
+  font-weight: 700;
+  border-bottom: 2px solid var(--global-text-color);
+}
+
+/*
+   Entries on the home page
+   --------------------------------------------------------------------------
+   Research experience, education and publications are introduced by a short
+   bold title line plus optional meta text, so the document outline stays
+   h1 (name) / h2 (section) and never skips a level.
+   ========================================================================== */
+
+.page__content .entry-title {
+  margin-top: 1.75em;
+  margin-bottom: 0.35em;
+  font-weight: 700;
+}
+
+/* The theme already sets `margin-top: 0` on paragraphs inside .page__content,
+   so the title and its subtitle stay visually grouped. */
+.page__content .entry-subtitle {
+  margin-bottom: 0.9em;
+  font-size: $type-size-6;
+  color: var(--global-text-color-light);
+}

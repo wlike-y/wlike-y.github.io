@@ -8,6 +8,12 @@
    sorted by the dependencies. Also, the first two lines of the file are required by Jekyll.
  */
 
+/*
+ * "custom" is imported last: it holds the site-specific rules for the
+ * single-page layout, so that nothing under _sass/layout/ or _sass/theme/
+ * has to be edited.
+ */
+
 @import
     "vendor/breakpoint/breakpoint",
 
@@ -35,5 +41,7 @@
     "layout/page",
     "layout/archive",
     "layout/sidebar",
-    "layout/json_cv"
+    "layout/json_cv",
+
+    "custom"
 ;

@@ -1,4 +1,5 @@
 ---
+published: false  # template demo entry, unpublished (kept for reference)
 title: "Paper Title Number 1"
 collection: publications
 category: manuscripts

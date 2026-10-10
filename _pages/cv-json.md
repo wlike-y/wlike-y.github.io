@@ -5,6 +5,11 @@ permalink: /cv-json/
 author_profile: false
 redirect_from:
   - /resume-json
+
+# Legacy template demo page. The single-page homepage now holds the real
+# content, so this URL is kept alive and forwards to the front page instead of
+# showing the template demo data.
+redirect_to: "/"
 ---
 
 {% include base_path %}

@@ -1,4 +1,5 @@
 ---
+published: false  # template demo entry, unpublished (kept for reference)
 title: "Teaching experience 1"
 collection: teaching
 type: "Undergraduate course"
